@@ -1,5 +1,6 @@
 import FavoriteRestaurantDB from "../../data/favorite-restaurant";
 import { createFavoriteRestaurantItemTemplate } from "../templates/template-creator";
+import Swal from 'sweetalert2';
 
 const Favorite = {
     async render() {
@@ -43,13 +44,10 @@ const Favorite = {
                 button.addEventListener("click", async (e) => {
                     await FavoriteRestaurantDB.deleteRestaurant(e.target.id);
                     Swal.fire({
-                        icon: "success",
-                        title: "Success!",
-                        text: "Successfully removed from favorites!",
-                    }).then((res) => {
-                        if (res.isConfirmed) {
-                            window.location.reload();
-                        }
+                        title: 'Success!',
+                        text: 'This is a SweetAlert2 notification.',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
                     });
                 });
             });

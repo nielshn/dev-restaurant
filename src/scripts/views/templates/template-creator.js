@@ -31,23 +31,28 @@ const createFavoriteRestaurantItemTemplate = (restaurant) => {
     : restaurant.description;
 
   return `
-      <article class="card" tabindex="0">
-          <div class="card-img-container">
-              <span class="card-place">${restaurant.city}</span>
-              <img class="card-image" alt="${restaurant.name}" src="${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)}">
-              <span class="card-rating">
-              <i title="ratings"></i>
-                  &starf; <span>${restaurant.rating}</span>
-              </span>
-          </div>
-          <div class="card-content">
-              <a class="card-content-title" href="/#/detail/${restaurant.id}">${restaurant.name}</a>
-              <p class="card-content-description">${trimmedDescription}</p>
-              <button class="btn-favorite-delete" id="${restaurant.id}">Remove from Favorites</button>
-          </div>
-      </article>
+  <article class="card" tabindex="0">
+  <div class="card-img-container">
+    <span class="card-place">${restaurant.city}</span>
+    <img class="card-image" alt="${restaurant.name}" src="${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)}">
+    <span class="card-rating">
+      <i title="ratings"></i>
+      &starf; <span>${restaurant.rating}</span>
+    </span>
+  </div>
+  <div class="card-content">
+  <a class="card-content-title" href="/#/detail/${restaurant.id}">${restaurant.name}</a>
+  <p class="card-content-description">${trimmedDescription}</p>
+  <button class="btn-favorite-delete" id="${restaurant.id}">
+  <i class="fa-solid fa-trash"></i>
+  </button>
+</div>
+
+</article>
+
   `;
 };
+
 
 
 const createRestaurantDetailTemplate = (restaurant) => `
@@ -86,7 +91,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <div class="descriptions card">
       <div class="header-info">
         <h2 class="detail-title">${restaurant.name}</h2>
-        <p>${restaurant.address}</p>
+        <p>${restaurant.address}, ${restaurant.city}</p>
       </div>
       <div class="detail-description">
         <h3>Description</h3>

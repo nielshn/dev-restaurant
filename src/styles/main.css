@@ -263,21 +263,23 @@ textarea {
 }
 .card-overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .card-place,
 .card-rating {
-  position: absolute;
   padding: 5px 10px;
   border-radius: 4px;
   color: #fff;
   font-size: 14px;
-  margin-bottom: 5px;
 }
 
 .card-place {

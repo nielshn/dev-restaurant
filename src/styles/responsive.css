@@ -1,5 +1,6 @@
 @media screen and (max-width: 1200px) {
-  .restaurant-list {
+  .restaurant-list,
+  .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
@@ -11,6 +12,12 @@
     overflow: hidden;
   }
 
+  .card-content-description {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2;
+    line-height: 1.5;
+  }
+
   .card-content {
     padding: 15px;
     border-radius: 0 0 8px 8px;
@@ -20,11 +27,6 @@
     font-size: 1.2rem;
   }
 
-  .card-content-description {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
   .card-rating {
     font-size: 14px;
   }
@@ -32,10 +34,44 @@
   .card:hover .card-content {
     transform: translateY(0);
   }
+
+  .detail-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .detail-img-container {
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .detail-content {
+    padding: 15px;
+  }
+
+  .detail-title {
+    font-size: 1.5rem;
+  }
+
+  .detail-description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .detail-rating {
+    font-size: 14px;
+  }
+
+  .detail-reviews.card .reviews .review {
+    width: 48%;
+    min-width: 280px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .restaurant-list {
+  .restaurant-list,
+  .container {
     grid-template-columns: 1fr;
     padding: 10px;
     gap: 10px;
@@ -47,6 +83,38 @@
 
   .card-content-description {
     font-size: 0.8rem;
+  }
+
+  .detail-header {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .detail-title {
+    font-size: 1.2rem;
+  }
+
+  .detail-description {
+    font-size: 0.9rem;
+  }
+  .detail-reviews.card {
+    padding: 15px;
+  }
+
+  .detail-reviews.card h3 {
+    font-size: 1.2rem;
+  }
+
+  .detail-reviews.card .reviews .review {
+    width: 100%;
+    min-width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .detail-reviews.card .reviews {
+    flex-wrap: wrap;
   }
 }
 
@@ -70,11 +138,41 @@
   }
 
   .detail-header,
-  .add-review,
-  .descriptions,
-  .detail-menus,
+  .detail-content,
   .detail-reviews {
     margin-bottom: 20px;
+  }
+
+  .detail-header img {
+    max-height: 200px;
+  }
+
+  .detail-title {
+    font-size: 1rem;
+  }
+
+  .detail-description {
+    font-size: 0.8rem;
+  }
+
+  .detail-reviews {
+    font-size: 0.8rem;
+  }
+  .detail-reviews.card {
+    padding: 10px;
+  }
+
+  .detail-reviews.card h3 {
+    font-size: 1rem;
+  }
+
+  .detail-reviews.card .reviews .review {
+    padding: 15px;
+    border-radius: 6px;
+  }
+
+  .detail-reviews.card .reviews .review .review-comment {
+    font-size: 0.9rem;
   }
 
   @keyframes hamburgerOpen {
@@ -212,7 +310,7 @@
     font-family: "Varela Round", sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -225,6 +323,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
   }
 
   /* Gaya typografi untuk teks footer */
@@ -249,5 +348,26 @@
 
   .skip-link {
     top: 0;
+  }
+
+  .card-content {
+    padding: 10px;
+  }
+
+  .card-rating {
+    font-size: 12px;
+  }
+
+  .card-content-title {
+    font-size: 0.9rem;
+  }
+
+  .card-content-description {
+    font-size: 0.7rem;
+  }
+
+  .btn-favorite-delete {
+    
+    padding: 8px 12px;
   }
 }
